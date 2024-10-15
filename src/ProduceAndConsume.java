@@ -8,6 +8,7 @@ public class ProduceAndConsume {
     List<Integer>Container;
     private static final Object lock = new Object();
 
+    // Intiallizing top & bot values
     public ProduceAndConsume(int top, int bottom)
     {
         this.top = top;
@@ -16,6 +17,7 @@ public class ProduceAndConsume {
     }
 
 
+    // Handling the Synchoronusization of Produce function
     public void Produce()
     {
         synchronized(lock)
@@ -51,6 +53,8 @@ public class ProduceAndConsume {
         }
     }
 
+
+    // Handling the Synchoronusization of Consume function
 
     public void Consume()
     {

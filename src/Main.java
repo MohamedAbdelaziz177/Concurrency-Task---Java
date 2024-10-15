@@ -1,12 +1,12 @@
 import java.util.function.Consumer;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
         ProduceAndConsume trx = new ProduceAndConsume(5, 0);
 
+        // Creating The Thread of Production
         Thread ProdThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -14,6 +14,7 @@ public class Main {
             }
         });
 
+        // Creating The Thread of Consuming
         Thread ConsThread = new Thread(new Runnable() {
             @Override
             public void run() {
