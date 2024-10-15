@@ -37,6 +37,9 @@ public class ProduceAndConsume {
                     System.out.println("Max Top is reached, No more add and waiting for Consumption");
 
                     try {
+
+                        // Converting Thread Status to be Waiting instead of Running
+                        // Now the other Thread - consumption thread - takes over
                         lock.wait();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -44,6 +47,7 @@ public class ProduceAndConsume {
                 }
 
                 try {
+                    // Delays the program to monitor the changes
                     Thread.sleep(1500);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -72,6 +76,9 @@ public class ProduceAndConsume {
                 {
                     System.out.println("Bottom is reached, No more remove and waiting for Production");
                     try {
+
+                         // Converting Thread Status to be Waiting instead of Running
+                        // Now the other Thread - production thread - takes over
                         lock.wait();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -79,6 +86,8 @@ public class ProduceAndConsume {
                 }
 
                 try {
+
+                    // Delays the program to monitor the changes
                     Thread.sleep(1500);
                 }
                 catch (InterruptedException e) {}
